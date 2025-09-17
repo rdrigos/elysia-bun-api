@@ -1,0 +1,26 @@
+{
+  "name": "elysia-bun-api",
+  "description": "",
+  "version": "1.0.0",
+  "module": "src/main.ts",
+  "scripts": {
+    "build": "bun build src/main.ts --outdir dist",
+    "compile": "bun build --compile src/main.ts --outfile dist/main",
+    "dev": "bun run --watch src/main.ts",
+    "format": "prettier . --write",
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@eslint/js": "9.35.0",
+    "bun-types": "1.2.22",
+    "eslint": "9.35.0",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-prettier": "5.5.4",
+    "globals": "16.4.0",
+    "prettier": "3.6.2",
+    "typescript-eslint": "8.44.0"
+  },
+  "dependencies": {
+    "elysia": "1.4.5"
+  }
+}
