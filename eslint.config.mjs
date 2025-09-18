@@ -1,5 +1,6 @@
 import eslint from '@eslint/js';
 import eslintConfigPrettier from 'eslint-config-prettier';
+import eslintPluginDrizzle from 'eslint-plugin-drizzle';
 import eslintPluginPrettier from 'eslint-plugin-prettier';
 import globals from 'globals';
 import typescriptEslint from 'typescript-eslint';
@@ -17,6 +18,7 @@ export default typescriptEslint.config(
   eslintConfigPrettier,
   {
     plugins: {
+      drizzle: eslintPluginDrizzle,
       prettier: eslintPluginPrettier,
     },
     rules: {

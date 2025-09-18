@@ -1,12 +1,13 @@
 import { env } from '@/infrastructure/environment';
-import { swagger } from '@elysiajs/swagger';
+import { openapi } from '@elysiajs/openapi';
 import { Server } from 'bun';
 import { Elysia } from 'elysia';
+import util from 'node:util';
 
 const app = new Elysia();
 
 app.use(
-  swagger({
+  openapi({
     documentation: {
       info: {
         title: env.NAME,
@@ -29,5 +30,5 @@ app.use(
 app.get('/', () => 'Hello Elysia');
 
 app.listen({ port: env.PORT }, (server: Server) => {
-  console.log(`🦊 Elysia is running at ${server.url.href}`);
+  console.log(util.format('🦊 Elysia is running at %s', server.url.href));
 });

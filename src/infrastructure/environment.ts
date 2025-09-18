@@ -9,6 +9,9 @@ const schema = z.object({
   DESCRIPTION: z.string(),
   VERSION: z.string().default('1.0.0'),
   PORT: z.coerce.number().min(80).max(65535),
+
+  // Database
+  DATABASE_URL: z.url(),
 });
 
 export const env = schema.parse(process.env);
